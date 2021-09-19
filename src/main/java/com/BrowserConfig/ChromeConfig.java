@@ -12,6 +12,8 @@ public class ChromeConfig {
     public static void main(String[] args) {
 
         launch_Chrome ();
+        //close_Chrome();
+        quit_Chrome();
 
     }
     public static void launch_Chrome (){
@@ -19,6 +21,20 @@ public class ChromeConfig {
         System.setProperty("webdriver.chrome.driver","./src/main/resources/chromedriver.exe");
         // System.out.println("webdriver.chrome.driver","F:\\study materils\\SQA\\BITM\\Automation\\Tools");
         driver = new ChromeDriver();
+        driver.manage().window().maximize(); //maximize window
     }
+
+    public static void close_Chrome (){
+
+        driver.close(); // close only active tab
+
+    }
+    public static void quit_Chrome (){
+
+        driver.quit(); //close full browser
+
+    }
+
+
 
 }
